@@ -5,16 +5,17 @@ import java.util.Scanner;
 
 public class JDBC {
     public static void main(String[] args) throws SQLException {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Conecting to database\nEnter DataBase name: ");
+        String dbName = s.nextLine(); //AirportGC
+        System.out.println("Enter Database username(default: postgres): ");
+        String dbUsername = s.nextLine();
+        System.out.println("Enter DataBase password: ");
+        String dbPassword = s.nextLine();
 
         Connection connection = null;
+        String dbUrl = "jdbc:postgresql://localhost:5432/" +dbName+"";
 
-        //User data
-        String dbUrl = "jdbc:postgresql://localhost:5432/AirportGC";
-        String dbUsername = "postgres";
-        String dbPassword = "1234";
-
-        //Queries
-        //hello
         
 
         //Set Connection
@@ -140,13 +141,14 @@ public class JDBC {
                 case 5:
                     continue;
 
-                case 6:
+                case 6: //Remove all table data
                     String deleteAllDataQuery = "DELETE FROM gc";
                     statement.executeUpdate(deleteAllDataQuery);
+                    System.out.println("\nAll Data  from table was removed.");
 
                     continue;
 
-                case 7:
+                case 7: //exit
                     System.out.println("\ngood Bye!");
                     menuRunning = false;
   
