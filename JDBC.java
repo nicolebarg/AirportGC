@@ -16,19 +16,12 @@ public class JDBC {
         Connection connection = null;
         String dbUrl = "jdbc:postgresql://localhost:5432/" +dbName+"";
 
-        
-
         //Set Connection
         connection = DriverManager.getConnection(dbUrl,dbUsername,dbPassword);
         
         //Statement
         Statement statement = connection.createStatement();
-
-        //Execute query and get ResultSet (The table)
         
-        
-
-        //create main menu & create functions for queries that accept user input (Insert func, Select func, etc)
 
         //Main menu
         Boolean menuRunning = true;
@@ -38,7 +31,7 @@ public class JDBC {
                                 "1. View Current table.\n" +
                                 "2. Add new Data to table.\n" +
                                 "3. remove Data from table.\n" + 
-                                "4. Change data in table.\n" +
+                                "4. Change Data in table.\n" +
                                 "5. Select a different option.\n" +
                                 "6. Delete all data from table.\n" +
                                 "7. Exit programm.\n");
@@ -66,9 +59,9 @@ public class JDBC {
                     System.out.println("\nEnter flight id: ");
                     scn.nextLine();
                     String flight_id = scn.nextLine();
-                    System.out.println("Enter plane_id: ");
+                    System.out.println("Enter plane id: ");
                     String plane_id = scn.nextLine();
-                    System.out.println("Enter plane_status (Arriving/Boarding/Departuring): ");
+                    System.out.println("Enter plane status (Arriving/Boarding/Departuring): ");
                     String plane_status = scn.nextLine();
                     System.out.println("Enter gate(arr/dep): ");
                     String gate = scn.nextLine();
@@ -115,9 +108,9 @@ public class JDBC {
                         System.out.println("Enter flight ID to change value: ");
                         scn.nextLine();
                         String idToAlter = scn.nextLine();
-                        System.out.println("Enter column name to change it's value: ");
+                        System.out.println("Enter column name to change it's value [flight_id/plane_id/plane_status/gate/route/time/date]: ");
                         String colToAlter = scn.nextLine();
-                        System.out.println("Enter new data to replace with: ");
+                        System.out.println("Enter new data to replace with [formats: time- hh:mm/date- yyyy-mm-dd]: ");
                         String replacementData = scn.nextLine();
                         
                         String alterDataQuery;
