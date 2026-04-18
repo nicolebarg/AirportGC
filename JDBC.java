@@ -14,6 +14,7 @@ public class JDBC {
         String dbPassword = "1234";
 
         //Queries
+        //hello
         
 
         //Set Connection
